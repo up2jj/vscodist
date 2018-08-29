@@ -3,7 +3,7 @@
     "displayName": "vscodist",
     "description": "Create Todoist task directly from selected code",
     "version": "0.0.1",
-    "publisher": "up2jj",
+    "publisher": "split-brain",
     "author": {
         "name": "Jakub Jasiulewicz"
     },
