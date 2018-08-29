@@ -1,0 +1,91 @@
+{
+    "name": "vscodist",
+    "displayName": "vscodist",
+    "description": "Create Todoist task directly from selected code",
+    "version": "0.0.1",
+    "publisher": "up2jj",
+    "author": {
+        "name": "Jakub Jasiulewicz"
+    },
+    "engines": {
+        "vscode": "^1.25.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "keywords": [
+        "todoist",
+        "productivity"
+    ],
+    "galleryBanner": {
+        "color": "#e44232",
+        "theme": "dark"
+    },
+    "icon": "media/Todoist-main_logo_negative.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/up2jj/vscodist.git"
+    },
+    "bugs": {
+        "url": "https://github.com/up2jj/vscodist/issues"
+    },
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [{
+                "command": "vscodist.apikey",
+                "title": "VSCodist: Set API key"
+            },
+            {
+                "command": "vscodist.addTask",
+                "title": "VSCodist: Add task"
+            },
+            {
+                "command": "vscodist.appQuickAdd",
+                "title": "VSCodist: Open Quick Add"
+            },
+            {
+                "command": "vscodist.appOpenInbox",
+                "title": "VSCodist: Open Inbox"
+            }
+        ],
+        "keybindings": [{
+                "command": "vscodist.addTask",
+                "key": "alt+t",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "vscodist.appQuickAdd",
+                "key": "alt+shift+t",
+                "when": "editorTextFocus"
+            }
+        ],
+        "configuration": [{
+            "title": "VSCodist configuration",
+            "properties": {
+                "vscodist.apiKey": {
+                    "type": "string",
+                    "description": "Todoist API key",
+                    "scope": "resource"
+                }
+            }
+        }]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.21",
+        "tslint": "^5.8.0",
+        "@types/node": "^8.10.25",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {}
+}
