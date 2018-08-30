@@ -6,7 +6,7 @@ export class HttpResponse {
   public error?: string
 
   get isOk() {
-    return this.status === 200
+    return this.status !== null && this.status < 400
   }
 
   get isFailed() {
